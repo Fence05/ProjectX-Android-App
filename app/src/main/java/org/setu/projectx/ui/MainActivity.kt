@@ -1,4 +1,4 @@
-package org.setu.projectx.MainMenu
+package org.setu.projectx.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
