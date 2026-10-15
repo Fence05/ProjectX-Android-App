@@ -14,7 +14,6 @@
             android:id="@+id/titleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="Tech Stores"
             android:textSize="28sp"
             android:textStyle="bold" />

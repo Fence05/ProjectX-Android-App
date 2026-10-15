@@ -8,6 +8,7 @@ data class TechStore(
     var id: Long = 0L,
     var name: String = "",
     var city: String = "",
+    var description: String = "",
     var priceLevel: Int = 1,        // 1 = cheap, 2 = median, 3 = expensive
     var latitude: Double = 0.0,
     var longitude: Double = 0.0,
