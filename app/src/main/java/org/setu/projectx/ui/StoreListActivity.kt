@@ -1,50 +1,68 @@
 package org.setu.projectx.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import org.setu.androidx.models.TechStore
+import org.setu.projectx.AppData
 import org.setu.projectx.R
-import org.setu.projectx.data.AppData
-import org.setu.projectx.models.Store
 
 class StoreListActivity : AppCompatActivity() {
 
-    private lateinit var storeAdapter: StoreAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: TechStoreAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_store_list)
 
-        storeAdapter = StoreAdapter(
-            stores = AppData.stores.findAll(),
-            onFavoriteToggle = { store -> toggleFavorite(store) },
-            onItemClick = { store -> showStore(store) }
+        recyclerView = findViewById(R.id.storesRecyclerView)
+
+        adapter = TechStoreAdapter(
+            stores = AppData.TechStores.findAll(),
+            onEdit = { store ->
+                editStore(store)
+            },
+            onDelete = { store ->
+                deleteStore(store)
+            }
         )
 
-        findViewById<RecyclerView>(R.id.storesRecyclerView).apply {
-            layoutManager = LinearLayoutManager(this@StoreListActivity)
-            adapter = storeAdapter
-        }
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
 
-        findViewById<Button>(R.id.backButton).setOnClickListener {
-            finish()
+        val returnButton = findViewById<Button>(R.id.returnButton)
+
+        returnButton.setOnClickListener {
+            startActivity(
+                Intent(this, MainActivity::class.java)
+            )
         }
     }
 
     override fun onResume() {
         super.onResume()
-        storeAdapter.updateStores(AppData.stores.findAll())
+
+        if (::adapter.isInitialized) {
+            adapter.updateStores(
+                AppData.TechStores.findAll()
+            )
+        }
     }
 
-    private fun toggleFavorite(store: Store) {
-        AppData.stores.update(store.copy(isFavorite = !store.isFavorite))
-        storeAdapter.updateStores(AppData.stores.findAll())
+    private fun editStore(store: TechStore) {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("id", store.id)
+        startActivity(intent)
     }
 
-    private fun showStore(store: Store) {
-        Toast.makeText(this, store.name, Toast.LENGTH_SHORT).show()
+    private fun deleteStore(store: TechStore) {
+        AppData.TechStores.delete(store.id)
+        adapter.updateStores(
+            AppData.TechStores.findAll()
+        )
     }
 }
