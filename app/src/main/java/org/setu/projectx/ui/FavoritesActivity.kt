@@ -1,4 +1,6 @@
 package org.setu.projectx.ui
 
-class FavoritesActivity {
+import androidx.appcompat.app.AppCompatActivity
+
+class FavoritesActivity : AppCompatActivity() {
 }
