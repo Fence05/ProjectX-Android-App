@@ -3,48 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@color/card_background"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/storeTitle"
-        tools:text="Store Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/top_bar_color"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:text="Store Title" />
 
     <TextView
         android:id="@+id/cityText"
-        tools:text="City Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp" />
+        android:layout_marginTop="4dp"
+        android:textColor="@color/text_dark"
+        android:textSize="16sp"
+        tools:text="City Name" />
 
     <TextView
         android:id="@+id/coordinatesText"
-        tools:text="Lat: 0.0, Long: 0.0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp" />
+        android:layout_marginTop="2dp"
+        android:textColor="@color/text_dark"
+        android:textSize="14sp"
+        tools:text="Lat: 0.0, Long: 0.0" />
 
     <TextView
         android:id="@+id/descriptionText"
-        tools:text="Store Description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/text_dark"
+        tools:text="Store Description" />
 
     <TextView
         android:id="@+id/userFinishedNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/text_dark"
         android:textSize="14sp"
         android:textStyle="italic"
         tools:text="My custom note goes here..." />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:orientation="horizontal">
 
         <Button
@@ -52,14 +64,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/btn_edit_note" />
+            android:backgroundTint="@color/button_background"
+            android:text="@string/btn_edit_note"
+            android:textColor="@color/white" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
 
         <Button
             android:id="@+id/FavoritesButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/save_favorite" />
+            android:backgroundTint="@color/button_background"
+            android:text="@string/save_favorite"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </LinearLayout>

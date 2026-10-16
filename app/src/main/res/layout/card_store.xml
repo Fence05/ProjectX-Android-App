@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@color/card_background"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -10,6 +12,7 @@
         android:id="@+id/storeTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/top_bar_color"
         android:textSize="20sp"
         android:textStyle="bold"
         tools:text="Store Title" />
@@ -18,6 +21,8 @@
         android:id="@+id/cityText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/text_dark"
         android:textSize="16sp"
         tools:text="City Name" />
 
@@ -25,26 +30,34 @@
         android:id="@+id/coordinatesText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/text_dark"
+        android:textSize="14sp"
         tools:text="Lat: 0.0, Long: 0.0" />
 
     <TextView
         android:id="@+id/descriptionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/text_dark"
         tools:text="Store Description" />
 
     <TextView
         android:id="@+id/userOwnNotes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_weight="0"
+        android:textColor="@color/text_dark"
+        android:textStyle="italic"
         android:visibility="gone"
         tools:text="User Note" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:orientation="horizontal">
 
         <Button
@@ -52,14 +65,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/save_favorite" />
+            android:backgroundTint="@color/button_background"
+            android:text="@string/save_favorite"
+            android:textColor="@color/white" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
 
         <Button
             android:id="@+id/RemoveButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/btn_remove_recommended" />
+            android:backgroundTint="@color/button_background"
+            android:text="@string/btn_remove_recommended"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </LinearLayout>

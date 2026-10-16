@@ -5,4 +5,5 @@
     <!-- Retrieved 2026-10-16, License - CC BY-SA 3.0 -->
 
     <dimen name="my_activity_padding">25dp</dimen>
+    <dimen name="Universal_Dimesnion">5dp</dimen>
 </resources>

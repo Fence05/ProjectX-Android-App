@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -11,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_edit_note"
+        android:textColor="@color/top_bar_color"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -19,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:textColor="@color/text_dark"
         android:textSize="20sp"
         tools:text="Store Name" />
 
@@ -37,13 +40,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/btn_save_note" />
+        android:backgroundTint="@color/button_background"
+        android:text="@string/btn_save_note"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/cancelNoteButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/btn_cancel" />
+        android:backgroundTint="@color/button_background"
+        android:text="@string/btn_cancel"
+        android:textColor="@color/white" />
 
 </LinearLayout>
