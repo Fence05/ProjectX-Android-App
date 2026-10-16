@@ -31,6 +31,9 @@ class FavoritesActivity : AppCompatActivity() {
             },
             onFavoriteToggle = { store ->
                 toggleFavorite(store)
+            },
+            onNoteEdit = { store ->
+                editNote(store)
             }
         )
 
@@ -53,6 +56,12 @@ class FavoritesActivity : AppCompatActivity() {
                 AppData.TechStores.findFavorites()
             )
         }
+    }
+
+    private fun editNote(store: TechStore) {
+        val intent = Intent(this, EditNoteActivity::class.java)
+        intent.putExtra("id", store.id)
+        startActivity(intent)
     }
 
     private fun editStore(store: TechStore) {

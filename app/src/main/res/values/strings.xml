@@ -13,6 +13,7 @@
     <!-- Card Store Activity -->
     <string name="save_favorite">Save To Favorites</string>
     <string name="remove_favorite">Remove Favorite</string>
+    <string name="btn_edit_note">Edit Note</string>
     <string name="btn_remove_recommended">Remove Recommended</string>
     <string name="latitude_label">Lat:</string>
     <string name="longitude_label">Long:</string>
@@ -22,4 +23,8 @@
     <string name="title_favorite_stores">Favorite Stores</string>
     <string name="btn_return_favorites_to_menu">Return To Menu</string>
 
+    <!-- Edit Note Activity -->
+    <string name="hint_enter_note">Enter note here...</string>
+    <string name="btn_save_note">Save Note</string>
+    <string name="btn_cancel">Cancel</string>
 </resources>
