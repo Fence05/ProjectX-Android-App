@@ -51,26 +51,13 @@
         android:textColor="@color/text_dark"
         android:textSize="14sp"
         android:textStyle="italic"
-        tools:text="My custom note goes here..." />
+        tools:text="Note goes here..." />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button_Edit_Note"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="@color/button_background"
-            android:text="@string/btn_edit_note"
-            android:textColor="@color/white" />
-
-        <Space
-            android:layout_width="8dp"
-            android:layout_height="match_parent" />
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
         <Button
             android:id="@+id/FavoritesButton"
@@ -79,7 +66,23 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_background"
             android:text="@string/save_favorite"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/button_Edit_Note"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/button_background"
+            android:text="@string/btn_edit_note"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
     </LinearLayout>
 
 </LinearLayout>

@@ -33,7 +33,9 @@
         android:autofillHints="none"
         android:hint="@string/hint_enter_note"
         android:inputType="textMultiLine"
-        android:minLines="3" />
+        android:minLines="3"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <Button
         android:id="@+id/saveNoteButton"
