@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Source - https://stackoverflow.com/a/33514889 -->
+    <!-- Posted by karan -->
+    <!-- Retrieved 2026-10-16, License - CC BY-SA 3.0 -->
+
+    <dimen name="my_activity_padding">25dp</dimen>
+</resources>

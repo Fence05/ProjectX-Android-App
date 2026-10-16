@@ -43,7 +43,7 @@ class TechStoreAdapter(
     ) {
         val store = stores[position]
 
-        holder.storeTitle.text = "${store.id}: ${store.name}"
+        holder.storeTitle.text = "${position + 1}: ${store.name}"
         holder.cityText.text = store.city
         holder.coordinatesText.text = "Lat: ${store.latitude}, Long: ${store.longitude}"
         holder.descriptionText.text = store.description
