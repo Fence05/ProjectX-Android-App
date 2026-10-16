@@ -28,6 +28,9 @@ class StoreListActivity : AppCompatActivity() {
             },
             onDelete = { store ->
                 deleteStore(store)
+            },
+            onFavoriteToggle = { store ->    //extra
+                toggleFavorite(store)
             }
         )
 
@@ -61,6 +64,13 @@ class StoreListActivity : AppCompatActivity() {
 
     private fun deleteStore(store: TechStore) {
         AppData.TechStores.delete(store.id)
+        adapter.updateStores(
+            AppData.TechStores.findAll()
+        )
+    }
+
+    private fun toggleFavorite(store: TechStore) { //extra
+        AppData.TechStores.toggleFavorite(store.id)
         adapter.updateStores(
             AppData.TechStores.findAll()
         )
