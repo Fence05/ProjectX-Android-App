@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -9,37 +10,37 @@
         android:id="@+id/storeTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:text="Store Title" />
 
     <TextView
         android:id="@+id/cityText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        tools:text="City Name" />
 
     <TextView
         android:id="@+id/coordinatesText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        tools:text="Lat: 0.0, Long: 0.0" />
 
     <TextView
         android:id="@+id/descriptionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        tools:text="Store Description" />
 
     <TextView
         android:id="@+id/userOwnNotes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="gone"
+        tools:text="User Note" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,14 +52,14 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Save To Favorites" />
+            android:text="@string/save_favorite" />
 
         <Button
             android:id="@+id/RemoveButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Remove Recommended" />
+            android:text="@string/btn_remove_recommended" />
     </LinearLayout>
 
 </LinearLayout>

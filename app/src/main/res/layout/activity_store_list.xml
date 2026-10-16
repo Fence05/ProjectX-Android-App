@@ -14,7 +14,7 @@
             android:id="@+id/titleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tech Stores"
+            android:text="@string/title_tech_stores"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Return To Menu" />
+            android:text="@string/btn_return_menu" />
 
     </LinearLayout>
 

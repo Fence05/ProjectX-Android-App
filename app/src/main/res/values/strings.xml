@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">ProjectX</string>
+
+    <!-- Main Activity -->
+    <string name="main_title">Tech Store Locator</string>
+    <string name="btn_tech_stores">Tech Stores</string>
+    <string name="btn_favorite_stores">Favorite Stores</string>
+
+    <!-- Store List Activity -->
+    <string name="title_tech_stores">Tech Stores</string>
+    <string name="btn_return_menu">Return To Menu</string>
+
+    <!-- Card Store -->
     <string name="save_favorite">Save To Favorites</string>
     <string name="remove_favorite">Remove Favorite</string>
+    <string name="btn_remove_recommended">Remove Recommended</string>
+    <string name="latitude_label">Lat:</string>
+    <string name="longitude_label">Long:</string>
 </resources>
