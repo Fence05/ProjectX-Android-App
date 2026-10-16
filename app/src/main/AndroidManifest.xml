@@ -27,6 +27,9 @@
         <activity
             android:name=".ui.FavoritesActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.EditNoteActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

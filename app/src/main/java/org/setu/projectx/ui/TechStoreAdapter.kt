@@ -13,7 +13,8 @@ class TechStoreAdapter(
     private var stores: List<TechStore>,
     private val onEdit: (TechStore) -> Unit,
     private val onDelete: (TechStore) -> Unit,
-    private val onFavoriteToggle: ((TechStore) -> Unit)? = null
+    private val onFavoriteToggle: ((TechStore) -> Unit)? = null,
+    private val onNoteEdit: ((TechStore) -> Unit)? = null
 ) : RecyclerView.Adapter<TechStoreAdapter.MainHolder>() {
 
     class MainHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -21,19 +22,17 @@ class TechStoreAdapter(
         val cityText: TextView = itemView.findViewById(R.id.cityText)
         val coordinatesText: TextView = itemView.findViewById(R.id.coordinatesText)
         val descriptionText: TextView = itemView.findViewById(R.id.descriptionText)
-        val userOwnNotes: TextView = itemView.findViewById(R.id.userOwnNotes)
+        val userFinishedNote: TextView? = itemView.findViewById(R.id.userFinishedNote)
+        val userOwnNotes: TextView? = itemView.findViewById(R.id.userOwnNotes)
+        val button_Edit_Note: Button? = itemView.findViewById(R.id.button_Edit_Note)
         val favoritesButton: Button = itemView.findViewById(R.id.FavoritesButton)
-        val removeButton: Button = itemView.findViewById(R.id.RemoveButton)
+        val removeButton: Button? = itemView.findViewById(R.id.RemoveButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
-
+        val layoutId = if (onNoteEdit != null) R.layout.favorites_card_store else R.layout.card_store
         val view = LayoutInflater.from(parent.context)
-            .inflate(
-                R.layout.card_store,
-                parent,
-                false
-            )
+            .inflate(layoutId, parent, false)
 
         return MainHolder(view)
     }
@@ -42,21 +41,19 @@ class TechStoreAdapter(
         holder: MainHolder,
         position: Int
     ) {
-
-
         val store = stores[position]
 
-        val context = holder.itemView.context
         holder.storeTitle.text = "${store.id}: ${store.name}"
         holder.cityText.text = store.city
         holder.coordinatesText.text = "Lat: ${store.latitude}, Long: ${store.longitude}"
         holder.descriptionText.text = store.description
 
+        val noteTextView = holder.userFinishedNote ?: holder.userOwnNotes
         if (store.note.isNotEmpty()) {
-            holder.userOwnNotes.text = store.note
-            holder.userOwnNotes.visibility = View.VISIBLE
+            noteTextView?.text = store.note
+            noteTextView?.visibility = View.VISIBLE
         } else {
-            holder.userOwnNotes.visibility = View.GONE
+            noteTextView?.visibility = View.GONE
         }
 
         holder.favoritesButton.setText(
@@ -64,8 +61,9 @@ class TechStoreAdapter(
         )
 
         holder.itemView.setOnClickListener { onEdit(store) }
-        holder.removeButton.setOnClickListener { onDelete(store) }
+        holder.removeButton?.setOnClickListener { onDelete(store) }
         holder.favoritesButton.setOnClickListener { onFavoriteToggle?.invoke(store) }
+        holder.button_Edit_Note?.setOnClickListener { onNoteEdit?.invoke(store) }
     }
 
     override fun getItemCount(): Int {
