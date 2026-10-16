@@ -9,9 +9,33 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class TechStoresTest {
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun favorites_listIsNotNull() {
+        val favorites = AppData.TechStores.findFavorites()
+        assertTrue(favorites != null)
+    }
+
+    @Test
+    fun toggleFavorite_changesFavoriteCount() {
+        val id = AppData.TechStores.findAll().first().id
+        val before = AppData.TechStores.findFavorites().size
+
+        AppData.TechStores.toggleFavorite(id)
+
+        val after = AppData.TechStores.findFavorites().size
+        assertTrue(before != after)
+    }
+
+    @Test
+    fun toggleFavorite_twice_goesBackToOriginal() {
+        val id = AppData.TechStores.findAll().first().id
+        val before = AppData.TechStores.findFavorites().size
+
+        AppData.TechStores.toggleFavorite(id)
+        AppData.TechStores.toggleFavorite(id)
+
+        assertEquals(before, AppData.TechStores.findFavorites().size)
     }
 }
